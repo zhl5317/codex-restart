@@ -2,6 +2,8 @@
 
 ## 1.0.2
 
+- Add a Simplified Chinese README with language navigation.
+
 - Improve installation instructions, recovery guidance, and Marketplace keywords.
 - Link the public source repository and issue tracker.
 - Add contribution guidance, a bug report template, and automated checks.

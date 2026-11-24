@@ -1,5 +1,7 @@
 # Codex Restart
 
+English | [简体中文](README.zh-CN.md)
+
 **Codex frozen or not responding in VS Code? Keep a restart button within reach.**
 
 [Install from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=zhouhl.codex-restart) · [Report a problem](https://github.com/zhl5317/codex-restart/issues) · [Source code](https://github.com/zhl5317/codex-restart)
