@@ -1,0 +1,10 @@
+.vscode/**
+test/**
+node_modules/**
+package-lock.json
+*.vsix
+.DS_Store
+.gitignore
+
+.github/**
+CONTRIBUTING.md

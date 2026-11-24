@@ -1,0 +1,103 @@
+{
+  "name": "codex-restart",
+  "displayName": "Codex Restart",
+  "description": "Restart a frozen or unresponsive OpenAI Codex extension in VS Code. One-click recovery with an emergency window reload shortcut.",
+  "version": "1.0.2",
+  "publisher": "zhouhl",
+  "author": {
+    "name": "zhouhl",
+    "email": "zhl809041737@gmail.com",
+    "url": "https://github.com/zhl5317?tab=repositories"
+  },
+  "homepage": "https://github.com/zhl5317?tab=repositories",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#0D181F",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "codex",
+    "openai",
+    "restart",
+    "recovery",
+    "extension host"
+  ],
+  "main": "./extension.js",
+  "extensionKind": [
+    "ui"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": {
+      "supported": true
+    }
+  },
+  "scripts": {
+    "test": "node --test test/extension.test.cjs",
+    "package": "vsce package --no-dependencies --githubBranch main"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "3.6.2"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "codexRestart.restart",
+        "title": "Restart Codex (Restart Extension Hosts)",
+        "category": "Codex Restart",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "codexRestart.reloadWindow",
+        "title": "Recover Codex (Reload Window)",
+        "category": "Codex Restart",
+        "icon": "$(refresh)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "codexRestart.restart",
+        "key": "ctrl+alt+shift+r",
+        "mac": "cmd+alt+shift+r"
+      },
+      {
+        "command": "workbench.action.reloadWindow",
+        "key": "ctrl+alt+shift+l",
+        "mac": "cmd+alt+shift+l"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "codexRestart.restart",
+          "when": "view == chatgpt.sidebarView || view == chatgpt.sidebarSecondaryView",
+          "group": "navigation@90"
+        },
+        {
+          "command": "codexRestart.reloadWindow",
+          "when": "view == chatgpt.sidebarView || view == chatgpt.sidebarSecondaryView",
+          "group": "codexRecovery@10"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhl5317/codex-restart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhl5317/codex-restart/issues"
+  }
+}
